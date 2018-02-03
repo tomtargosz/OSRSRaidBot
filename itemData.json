@@ -1,0 +1,62 @@
+{
+  "dexterous": {
+    "id": 21034,
+    "itemName": "Dexterous prayer scroll"
+  },
+  "arcane": {
+    "id": 21079,
+    "itemName": "Arcane prayer scroll"
+  },
+  "sword": {
+    "id": 21009,
+    "itemName": "Dragon sword"
+  },
+  "harpoon": {
+    "id": 21028,
+    "itemName": "Dragon harpoon"
+  },
+  "thrownaxes": {
+    "id": 20849,
+    "itemName": "Dragon thrownaxe x100"
+  },
+  "buckler": {
+    "id": 21000,
+    "itemName": "Twisted buckler"
+  },
+  "crossbow": {
+    "id": 21012,
+    "itemName": "Dragon hunter crossbow"
+  },
+  "bulwark": {
+    "id": 21015,
+    "itemName": "Dinh's bulwark"
+  },
+  "hat": {
+    "id": 21018,
+    "itemName": "Ancestral hat"
+  },
+  "top": {
+    "id": 21024,
+    "itemName": "Ancestral robe top"
+  },
+  "bottom": {
+    "id": 21021,
+    "itemName": "Ancestral robe bottom"
+  },
+  "claws": {
+    "id": 13652,
+    "itemName": "Dragon claws"
+  },
+  "maul": {
+    "id": 21003,
+    "itemName": "Elder maul"
+  },
+  "kodai": {
+    "id": 21043,
+    "itemName": "Kodai insignia"
+  },
+  "tbow": {
+    "id": 20997,
+    "itemName": "Twisted bow"
+  }
+}

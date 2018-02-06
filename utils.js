@@ -1,4 +1,4 @@
-// Util to
+// Util to retrieve an item's key via a variety of spellings/shorthands
 getItemKey = (item) => {
   if (!item) {
     return null;

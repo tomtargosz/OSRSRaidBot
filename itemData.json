@@ -1,77 +1,79 @@
 {
-  "dexterous": {
-    "id": 21034,
-    "itemName": "Dexterous prayer scroll",
-    "probability": "23.8%"
-  },
-  "arcane": {
-    "id": 21079,
-    "itemName": "Arcane prayer scroll",
-    "probability": "23.8%"
-  },
-  "sword": {
-    "id": 21009,
-    "itemName": "Dragon sword",
-    "probability": "5.95%"
-  },
-  "harpoon": {
-    "id": 21028,
-    "itemName": "Dragon harpoon",
-    "probability": "5.95%"
-  },
-  "thrownaxes": {
-    "id": 20849,
-    "itemName": "Dragon thrownaxe x100",
-    "probability": "5.95%"
-  },
-  "buckler": {
-    "id": 21000,
-    "itemName": "Twisted buckler",
-    "probability": "4.76%"
-  },
-  "crossbow": {
-    "id": 21012,
-    "itemName": "Dragon hunter crossbow",
-    "probability": "4.76%"
-  },
-  "bulwark": {
-    "id": 21015,
-    "itemName": "Dinh's bulwark",
-    "probability": "3.57%"
-  },
-  "hat": {
-    "id": 21018,
-    "itemName": "Ancestral hat",
-    "probability": "3.57%"
-  },
-  "top": {
-    "id": 21024,
-    "itemName": "Ancestral robe top",
-    "probability": "3.57%"
-  },
-  "bottom": {
-    "id": 21021,
-    "itemName": "Ancestral robe bottom",
-    "probability": "3.57%"
-  },
-  "claws": {
-    "id": 13652,
-    "itemName": "Dragon claws",
-    "probability": "3.57%"
-  },
-  "maul": {
-    "id": 21003,
-    "itemName": "Elder maul",
-    "probability": "2.38%"
-  },
-  "kodai": {
-    "id": 21043,
-    "itemName": "Kodai insignia",
-    "probability": "2.38%"
-  },
-  "tbow": {
-    "id": 20997,
-    "itemName": "Twisted bow",
-    "probability": "2.38%"
+  "items": {
+    "dexterous": {
+      "id": 21034,
+      "itemName": "Dexterous prayer scroll",
+      "probability": "23.8%"
+    },
+    "arcane": {
+      "id": 21079,
+      "itemName": "Arcane prayer scroll",
+      "probability": "23.8%"
+    },
+    "sword": {
+      "id": 21009,
+      "itemName": "Dragon sword",
+      "probability": "5.95%"
+    },
+    "harpoon": {
+      "id": 21028,
+      "itemName": "Dragon harpoon",
+      "probability": "5.95%"
+    },
+    "thrownaxes": {
+      "id": 20849,
+      "itemName": "Dragon thrownaxe x100",
+      "probability": "5.95%"
+    },
+    "buckler": {
+      "id": 21000,
+      "itemName": "Twisted buckler",
+      "probability": "4.76%"
+    },
+    "crossbow": {
+      "id": 21012,
+      "itemName": "Dragon hunter crossbow",
+      "probability": "4.76%"
+    },
+    "bulwark": {
+      "id": 21015,
+      "itemName": "Dinh's bulwark",
+      "probability": "3.57%"
+    },
+    "hat": {
+      "id": 21018,
+      "itemName": "Ancestral hat",
+      "probability": "3.57%"
+    },
+    "top": {
+      "id": 21024,
+      "itemName": "Ancestral robe top",
+      "probability": "3.57%"
+    },
+    "bottom": {
+      "id": 21021,
+      "itemName": "Ancestral robe bottom",
+      "probability": "3.57%"
+    },
+    "claws": {
+      "id": 13652,
+      "itemName": "Dragon claws",
+      "probability": "3.57%"
+    },
+    "maul": {
+      "id": 21003,
+      "itemName": "Elder maul",
+      "probability": "2.38%"
+    },
+    "kodai": {
+      "id": 21043,
+      "itemName": "Kodai insignia",
+      "probability": "2.38%"
+    },
+    "tbow": {
+      "id": 20997,
+      "itemName": "Twisted bow",
+      "probability": "2.38%"
+    }
   }
 }

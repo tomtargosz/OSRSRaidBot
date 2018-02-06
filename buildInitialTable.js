@@ -1,5 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 const _ = require('lodash');
+const moment = require('moment');
 
 const config = require("./config.json");
 const ITEM_DATA = require("./itemData.json");
@@ -13,6 +14,7 @@ _.forEach(ITEM_DATA.items, item => {
     itemName: item.itemName,
     probability: item.probability,
     value: "0",
+    updated: moment(),
   };
   itemsObject.push(newItem);
 });

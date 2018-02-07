@@ -14,7 +14,7 @@ _.forEach(ITEM_DATA.items, item => {
     itemName: item.itemName,
     probability: item.probability,
     value: "0",
-    updated: moment(),
+    lastUpdated: moment(),
   };
   itemsObject.push(newItem);
 });

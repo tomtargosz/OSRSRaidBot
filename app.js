@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
+const getItemID = require('./utils.js');
 const config = require("./config.json");
 
 const ROTATIONS_IMAGE_URL = "https://i.redd.it/hdfsf45xwzqy.png";

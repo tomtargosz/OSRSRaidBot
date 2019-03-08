@@ -132,7 +132,7 @@ const updateDBItem = (itemID, response) => {
     const items = client.db(config.db_name).collection(config.db_collection);
     const itemQuery = { id: itemID };
     const updateQuery = {
-      $set: { value: currentPrice, lastUpdated: moment() }
+      $set: { value: currentPrice }
     };
 
     items.updateOne(itemQuery, updateQuery, (err, res) => {

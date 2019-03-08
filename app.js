@@ -13,6 +13,7 @@ const ITEM_DATA = require("./itemData.json");
 const DB_URI = `mongodb+srv://${config.db_user}:${config.db_password}@${config.db_url}`;
 const ROTATIONS_IMAGE_URL = "https://i.redd.it/hdfsf45xwzqy.png";
 const OSRS_GE_BASE_URL = "http://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item=";
+const HELP_MESSAGE = "This bot supports the following commands:\n- !rotation: displays the different possible raid rotations\n- !item: displays the drop rate and current price of any raids items";
 
 bot.on("ready", () => {
   console.log('Bot has started successfully!');
@@ -43,8 +44,10 @@ bot.on("message", async message => {
   const command = args.shift().toLowerCase();
 
   switch(command) {
+    case "help":
+      message.channel.send(HELP_MESSAGE);
+      break;
     case "rotation":
-    case "rotations":
       message.channel.send(ROTATIONS_IMAGE_URL);
       break;
     case "item":

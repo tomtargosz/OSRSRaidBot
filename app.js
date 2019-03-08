@@ -30,18 +30,9 @@ bot.on("ready", () => {
 
   updateDBItems();
   setInterval(() => {
-    updateDBItem();
+    updateDBItems();
   }, config.update_item_interval);
 });
-
-bot.on("guildCreate", guild => {
-  console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-});
-
-bot.on("guildDelete", guild => {
-  console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-});
-
 
 bot.on("message", async message => {
   if (message.author.bot || message.content.indexOf(config.prefix) !== 0) {
@@ -55,6 +46,21 @@ bot.on("message", async message => {
     case "rotation":
     case "rotations":
       message.channel.send(ROTATIONS_IMAGE_URL);
+      break;
+    case "item":
+      if (!_.isEmpty(args)) {
+        const itemID = getItemID(args.join(' '));
+        if (!!itemID) {
+          const retVal = await getSingleItem(itemID, buildSingleItemTable);
+          if (!!retVal) {
+            message.channel.send(buildSingleItemTable(retVal));
+          }
+        } else {
+          message.channel.send("ERROR: Item not found!");
+        }
+      } else {
+        message.channel.send("ERROR: Supply an item to look up!");
+      }
       break;
     default:
       break;
@@ -110,4 +116,29 @@ const updateDBItems = () => {
   });
   
   console.log("Items updated!");
+}
+
+async function getSingleItem(itemID) {
+  const client = await MongoClient.connect(DB_URI);
+  const result = await client.db(config.db_name).collection(config.db_collection).find({ id: itemID }).toArray();
+
+  return result;
+}
+
+const buildSingleItemTable = (response) => {
+  if (!response) {
+    console.log('null response');
+    return null;
+  }
+  const itemName = _.get(response[0], 'itemName', 'N/A');
+  const value = _.get(response[0], 'value', 'N/A');
+  const probability = _.get(response[0], 'probability', 'N/A');
+
+  let message = new Discord.RichEmbed();
+  message
+    .addField("Item", itemName, true)
+    .addField("Price",  value, true)
+    .addField("Drop Rate",  probability, true);
+
+  return message;
 }

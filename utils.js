@@ -1,11 +1,13 @@
+const _ = require("lodash");
+
 // Util to retrieve an item's ID via a variety of spellings/shorthands
-getItemID = (item) => {
+getItemID = item => {
   if (!item) {
     return null;
   }
 
-  const searchTerm =  item.toLowerCase();
-  switch(searchTerm) {
+  const searchTerm = item.toLowerCase();
+  switch (searchTerm) {
     case "dex":
     case "dext":
     case "dex scroll":
@@ -80,6 +82,35 @@ getItemID = (item) => {
     default:
       return null;
   }
-}
+};
 
-module.exports = getItemID;
+// Calculates % chance of recieving a unique drop based on numuber of points accumulated: https://oldschool.runescape.wiki/w/Chambers_of_Xeric#Unique_drop_table
+calculateUniqueProbability = points => {
+  const MAX_POINTS_PER_CHANCE = 570000;
+  const POINTS_PER_1_PERCENT_CHANCE = 8675;
+  const formattedPoints = Number(points);
+
+  if (_.isNaN(formattedPoints) || formattedPoints < 0) {
+    return "ERROR: Incorrect number format";
+  }
+  if (formattedPoints < MAX_POINTS_PER_CHANCE) {
+    return (
+      "Chance of unique: " +
+      (formattedPoints / POINTS_PER_1_PERCENT_CHANCE).toFixed(2) +
+      "%"
+    );
+  } else if (formattedPoints < MAX_POINTS_PER_CHANCE * 2) {
+    return (
+      "Chance of 1st unique: " +
+      (MAX_POINTS_PER_CHANCE / POINTS_PER_1_PERCENT_CHANCE).toFixed(2) +
+      "%\nChance of 2nd unique: " +
+      (
+        (formattedPoints - MAX_POINTS_PER_CHANCE) /
+        POINTS_PER_1_PERCENT_CHANCE
+      ).toFixed(2) +
+      "%"
+    );
+  }
+};
+
+module.exports = { getItemID, calculateUniqueProbability };

@@ -18,19 +18,6 @@ getItemID = item => {
     case "arcane scroll":
     case "arcane prayer scroll":
       return 21079;
-    case "dragon sword":
-    case "sword":
-      return 21009;
-    case "dragon harpoon":
-    case "harpoon":
-    case "harp":
-      return 21028;
-    case "dragon thrownaxe":
-    case "axe":
-    case "axes":
-    case "thrownaxe":
-    case "thrownaxes":
-      return 20849;
     case "twisted buckler":
     case "buck":
     case "buckler":
@@ -40,6 +27,7 @@ getItemID = item => {
     case "hunter":
     case "cbow":
     case "xbow":
+    case "dhcb":
       return 21012;
     case "dinh's bulwark":
     case "dinhs bulwark":

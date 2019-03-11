@@ -1,0 +1,10 @@
+{
+  "token"  : "",
+  "prefix" : "",
+  "db_user": "",
+  "db_password": "",
+  "db_url": "",
+  "db_name": "",
+  "db_collection": "",
+  "update_item_interval": 900000
+}

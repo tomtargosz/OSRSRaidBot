@@ -21,14 +21,16 @@ const HELP_MESSAGE =
   "This bot supports the following commands:\n" +
   "- `!help`: provides an overview of the bots functionality\n" +
   "- `!rotation`: displays the different possible raid rotations\n" +
-  "- `!item`: displays the drop rate and current price of any raids items\n" +
-  "- `!drop`: calculates the % chance of receiving a unique drop based on the amount of points accumulated in a raid";
+  "- `!item [itemName]`: displays the drop rate and current price of the specified raids items\n" +
+  "- `!drop [points]`: calculates the % chance of receiving a unique drop based on the amount of points accumulated in a raid";
 const COMMANDS = {
   HELP: "help",
   ROTATION: "rotation",
   ITEM: "item",
   DROP: "drop"
 };
+
+bot.login(config.token);
 
 bot.on("ready", () => {
   console.log("Bot has started successfully!");
@@ -66,6 +68,7 @@ bot.on("message", async message => {
         command +
         "` does not exist! Use `!help` for an overview of functionality."
     );
+    return;
   }
   if (commandsWithArgs.indexOf(command) !== -1 && _.isEmpty(args)) {
     message.channel.send(
@@ -90,6 +93,8 @@ bot.on("message", async message => {
         const retVal = await getSingleItem(itemID);
         if (!!retVal) {
           message.channel.send(buildSingleItemTable(retVal));
+        } else {
+          message.channel.send("ERROR: Item not found!");
         }
       } else {
         message.channel.send("ERROR: Item not found!");
@@ -99,8 +104,6 @@ bot.on("message", async message => {
       break;
   }
 });
-
-bot.login(config.token);
 
 const getExchangePrice = (itemID, callback) => {
   const url = OSRS_GE_BASE_URL + itemID;

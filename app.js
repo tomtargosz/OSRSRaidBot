@@ -105,6 +105,7 @@ bot.on("message", async message => {
   }
 });
 
+// Gets the price of an item from the RuneScape Grand Exchange website (http://services.runescape.com/m=itemdb_oldschool/)
 const getExchangePrice = (itemID, callback) => {
   const url = OSRS_GE_BASE_URL + itemID;
 

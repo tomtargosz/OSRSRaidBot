@@ -151,15 +151,12 @@ const updateDBItem = (itemID, response) => {
 
 // Updates all items in the DB
 const updateDBItems = () => {
-  console.log("Updating items in DB...");
-
   _.forEach(ITEM_DATA.items, item => {
     getExchangePrice(item.id, updateDBItem);
   });
-
-  console.log("Items updated!");
 };
 
+// Retrieves the object for a specific item from the database
 async function getSingleItem(itemID) {
   const client = await MongoClient.connect(DB_URI);
   const result = await client
@@ -171,6 +168,7 @@ async function getSingleItem(itemID) {
   return result;
 }
 
+// Builds a Discord Rich Embedded Message with the item's information
 const buildSingleItemTable = response => {
   if (!response) {
     console.log("null response");

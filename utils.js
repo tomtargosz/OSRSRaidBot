@@ -76,26 +76,42 @@ getItemID = item => {
 calculateUniqueProbability = points => {
   const MAX_POINTS_PER_CHANCE = 570000;
   const POINTS_PER_1_PERCENT_CHANCE = 8675;
+  const maxChance = (
+    MAX_POINTS_PER_CHANCE / POINTS_PER_1_PERCENT_CHANCE
+  ).toFixed(2);
   const formattedPoints = Number(points);
 
   if (_.isNaN(formattedPoints) || formattedPoints < 0) {
     return "ERROR: Incorrect number format";
   }
-  if (formattedPoints < MAX_POINTS_PER_CHANCE) {
-    return (
-      "Chance of unique: " +
-      (formattedPoints / POINTS_PER_1_PERCENT_CHANCE).toFixed(2) +
-      "%"
-    );
-  } else if (formattedPoints < MAX_POINTS_PER_CHANCE * 2) {
+  if (formattedPoints <= MAX_POINTS_PER_CHANCE) {
+    const chance = (formattedPoints / POINTS_PER_1_PERCENT_CHANCE).toFixed(2);
+    return "Chance of unique: " + chance + "%";
+  } else if (formattedPoints <= MAX_POINTS_PER_CHANCE * 2) {
+    const chanceOfSecond = (
+      (formattedPoints - MAX_POINTS_PER_CHANCE) /
+      POINTS_PER_1_PERCENT_CHANCE
+    ).toFixed(2);
     return (
       "Chance of 1st unique: " +
-      (MAX_POINTS_PER_CHANCE / POINTS_PER_1_PERCENT_CHANCE).toFixed(2) +
+      maxChance +
       "%\nChance of 2nd unique: " +
-      (
-        (formattedPoints - MAX_POINTS_PER_CHANCE) /
-        POINTS_PER_1_PERCENT_CHANCE
-      ).toFixed(2) +
+      chanceOfSecond +
+      "%"
+    );
+  } else {
+    const pointsForThirdItem = points - MAX_POINTS_PER_CHANCE * 2;
+    const chanceOfThird =
+      pointsForThirdItem > MAX_POINTS_PER_CHANCE
+        ? maxChance
+        : (pointsForThirdItem / POINTS_PER_1_PERCENT_CHANCE).toFixed(2);
+    return (
+      "Chance of 1st unique: " +
+      maxChance +
+      "%\nChance of 2nd unique: " +
+      maxChance +
+      "%\nChance of 3rd unique: " +
+      chanceOfThird +
       "%"
     );
   }

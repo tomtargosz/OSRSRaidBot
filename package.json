@@ -7,7 +7,7 @@
     "discord.js": "^11.3.0",
     "lodash": "^4.17.11",
     "moment": "^2.20.1",
-    "mongodb": "^3.0.2",
+    "mongodb": "^3.1.13",
     "request": "^2.83.0"
   },
   "devDependencies": {},

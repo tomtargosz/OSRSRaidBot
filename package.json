@@ -4,10 +4,10 @@
   "description": "Discord Bot that provides helpful functionality for OSRS raiding",
   "main": "app.js",
   "dependencies": {
-    "lodash": "^4.17.4",
-    "mongodb": "^3.0.2",
-    "moment": "^2.20.1",
     "discord.js": "^11.3.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.20.1",
+    "mongodb": "^3.0.2",
     "request": "^2.83.0"
   },
   "devDependencies": {},

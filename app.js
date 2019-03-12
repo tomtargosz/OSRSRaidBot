@@ -63,11 +63,6 @@ bot.on("message", async message => {
   const commandsWithArgs = [DROP, ITEM];
 
   if (!COMMANDS[command.toUpperCase()]) {
-    message.channel.send(
-      "ERROR: Command `" +
-        command +
-        "` does not exist! Use `!help` for an overview of functionality."
-    );
     return;
   }
   if (commandsWithArgs.indexOf(command) !== -1 && _.isEmpty(args)) {

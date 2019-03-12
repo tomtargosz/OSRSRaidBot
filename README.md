@@ -2,9 +2,10 @@
 Discord Bot that provides helpful functionality for OSRS raiding.
 
 ## How to start the bot
-1. Fill out the values in the config.json file
-2. Run `node buildInitialTable.js` to create the database structure needed for the bot
-3. Run `node app.js` to populate the database with item information and start the bot
+1. Run `npm install`
+2. Fill out the values in the config.json file
+3. Run `node buildInitialTable.js` to create the database structure needed for the bot
+4. Run `node app.js` to populate the database with item information and start the bot
 
 ## Bot commands
 * `help`: provides an overview of the bots functionality by listing out all commands the bot can respond to
